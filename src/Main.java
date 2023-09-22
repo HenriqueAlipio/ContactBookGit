@@ -179,8 +179,6 @@ public class Main {
                 System.out.println(contact.getName());
 
             }
-
-
         }
 }
 
