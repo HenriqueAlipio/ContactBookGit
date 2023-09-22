@@ -51,11 +51,15 @@ public class ContactBook {
 
     public Contact getContact(int phone) {
         int i;
+
         for(i = 0; i < contacts.length; i++) {
+            if(contacts[i] == null) {
+                return null;
+            }
             if(contacts[i].getPhone() == phone) {
                 return contacts[i];
             }
-        } 
+        }
         return null;
     }
 

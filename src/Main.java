@@ -59,6 +59,9 @@ public class Main {
                 case LIST_CONTACTS:
                     listAllContacts(cBook);
                     break;
+                case CHECK_REPEATED:
+                    checkRepeatedContacts(cBook);
+                    break;
                 case GIVEN_PHONE_NUMBER:
                     givenNumber(in, cBook);
                     break;
@@ -169,14 +172,13 @@ public class Main {
             phone = in.nextInt(); in.nextLine();
 
             if (cBook.getContact(phone) == null) {
+
                 System.out.println(PHONE_NOT_EXISTS);
             } else {
                 Contact contact = cBook.getContact(phone);
                 System.out.println(contact.getName());
+
             }
         }
-
-
-
 }
 
