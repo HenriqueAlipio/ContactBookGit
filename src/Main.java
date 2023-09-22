@@ -26,6 +26,8 @@ public class Main {
     public static final String BOOK_EMPTY = "contactBook.Contact book empty.";
     public static final String QUIT_MSG = "Goodbye!";
     public static final String COMMAND_ERROR = "Unknown command.";
+    private static final String SHARED_PHONE_NUMBERS = "There are contacts that share phone numbers.";
+    private static final String DIFFERENT_PHONE_NUMBERS = "All contacts have different phone numbers.";
 
     public static final String PHONE_NOT_EXISTS = "Phone number does not exist.";
 
@@ -155,17 +157,16 @@ public class Main {
         else System.out.println(BOOK_EMPTY);
     }
     private static void checkRepeatedContacts (ContactBook cBook){
-    while (cBook.hasNext()) {
-      //  if(cBook.getPhone(cBook.get) != cBook.next().getPhone());
+        if (cBook.hasRepeatedPhoneNumbers())
+            System.out.println(SHARED_PHONE_NUMBERS);
+        else
+            System.out.println(DIFFERENT_PHONE_NUMBERS);
 
-    }}
+    }
 
         private static void givenNumber (Scanner in, ContactBook cBook) {
             int phone;
             phone = in.nextInt(); in.nextLine();
-
-
-            System.out.println(phone);
 
             if (cBook.getContact(phone) == null) {
                 System.out.println(PHONE_NOT_EXISTS);
@@ -176,3 +177,4 @@ public class Main {
         }
 
 }
+
