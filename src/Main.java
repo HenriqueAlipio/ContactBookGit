@@ -15,6 +15,8 @@ public class Main {
     public static final String LIST_CONTACTS  = "LC";
     public static final String QUIT           = "Q";
 
+    public static final String CHECK_REPEATED = "EP";
+
     //Constantes que definem as mensagens para o utilizador
     public static final String CONTACT_EXISTS = "contactBook.Contact already exists.";
     public static final String NAME_NOT_EXIST = "contactBook.Contact does not exist.";
@@ -146,5 +148,13 @@ public class Main {
             }
         }
         else System.out.println(BOOK_EMPTY);
+    }
+    private static void checkRepeatedContacts (ContactBook cBook){
+    while (cBook.hasNext()) {
+      //  if(cBook.getPhone(cBook.get) != cBook.next().getPhone());
+
+    }
+
+
     }
 }
