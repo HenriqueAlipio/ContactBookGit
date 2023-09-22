@@ -1,9 +1,5 @@
 package contactBook;
 
-import contactBook.Contact;
-
-import java.util.HashSet;
-
 public class ContactBook {
     static final int DEFAULT_SIZE = 100;
 
