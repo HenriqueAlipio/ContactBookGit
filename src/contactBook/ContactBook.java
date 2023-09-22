@@ -30,6 +30,8 @@ public class ContactBook {
         counter++;
     }
 
+    
+
     //Pre: name != null && hasContact(name)
     public void deleteContact(String name) {
         int index = searchIndex(name);
@@ -41,6 +43,16 @@ public class ContactBook {
     //Pre: name != null && hasContact(name)
     public int getPhone(String name) {
         return contacts[searchIndex(name)].getPhone();
+    }
+
+    public Contact getContact(int phone) {
+        int i;
+        for(i = 0; i < contacts.length; i++) {
+            if(contacts[i].getPhone == phone) {
+                return Contact;
+            }
+        } 
+        return null;
     }
 
     //Pre: name != null && hasContact(name)
