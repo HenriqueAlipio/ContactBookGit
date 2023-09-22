@@ -14,9 +14,8 @@ public class Main {
     public static final String SET_EMAIL      = "SE";
     public static final String LIST_CONTACTS  = "LC";
     public static final String QUIT           = "Q";
-
-    public static final String CHECK_REPEATED = "EP";
     public static final String GIVEN_PHONE_NUMBER = "GN";
+    public static final String CHECK_REPEATED = "EP";
 
     //Constantes que definem as mensagens para o utilizador
     public static final String CONTACT_EXISTS = "contactBook.Contact already exists.";
@@ -27,7 +26,6 @@ public class Main {
     public static final String BOOK_EMPTY = "contactBook.Contact book empty.";
     public static final String QUIT_MSG = "Goodbye!";
     public static final String COMMAND_ERROR = "Unknown command.";
-
     public static final String SHARED_PHONE_NUMBERS= "There are contacts that share phone numbers.";
     public static final String DIFFERENT_PHONE_NUMBERS= "All contacts have different phone numbers.";
 
@@ -58,6 +56,9 @@ public class Main {
                     break;
                 case LIST_CONTACTS:
                     listAllContacts(cBook);
+                    break;
+                case CHECK_REPEATED:
+                    checkRepeatedContacts(cBook);
                     break;
                 default:
                     System.out.println(COMMAND_ERROR);
