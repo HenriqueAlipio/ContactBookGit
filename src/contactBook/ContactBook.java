@@ -32,6 +32,8 @@ public class ContactBook {
         counter++;
     }
 
+    
+
     //Pre: name != null && hasContact(name)
     public void deleteContact(String name) {
         int index = searchIndex(name);
