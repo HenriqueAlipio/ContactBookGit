@@ -13,8 +13,6 @@ public class Main {
     public static final String SET_PHONE      = "SP";
     public static final String SET_EMAIL      = "SE";
     public static final String LIST_CONTACTS  = "LC";
-
-    public static final String GET_CONTACT ="GN";
     public static final String QUIT           = "Q";
 
     //Constantes que definem as mensagens para o utilizador
@@ -55,8 +53,6 @@ public class Main {
                 case LIST_CONTACTS:
                     listAllContacts(cBook);
                     break;
-                case GET_CONTACT:
-                    getContact(in,cBook);
                 default:
                     System.out.println(COMMAND_ERROR);
             }
@@ -150,7 +146,5 @@ public class Main {
             }
         }
         else System.out.println(BOOK_EMPTY);
-    }
-    private static void getContact(Scanner in, ContactBook cBook) {
     }
 }
