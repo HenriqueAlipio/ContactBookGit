@@ -150,11 +150,10 @@ public class Main {
         else System.out.println(BOOK_EMPTY);
     }
     private static void checkRepeatedContacts (ContactBook cBook){
-    while (cBook.hasNext()) {
-      //  if(cBook.getPhone(cBook.get) != cBook.next().getPhone());
-
-    }
-
+    if (cBook.hasRepeatedPhoneNumbers())
+        System.out.println("There are contacts that share phone numbers.");
+    else
+        System.out.println("All contacts have different phone numbers.");
 
     }
 }
