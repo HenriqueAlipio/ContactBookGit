@@ -28,6 +28,9 @@ public class Main {
     public static final String QUIT_MSG = "Goodbye!";
     public static final String COMMAND_ERROR = "Unknown command.";
 
+    public static final String SHARED_PHONE_NUMBERS= "There are contacts that share phone numbers.";
+    public static final String DIFFERENT_PHONE_NUMBERS= "All contacts have different phone numbers.";
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         ContactBook cBook = new ContactBook();
@@ -152,9 +155,9 @@ public class Main {
     }
     private static void checkRepeatedContacts (ContactBook cBook){
     if (cBook.hasRepeatedPhoneNumbers())
-        System.out.println("There are contacts that share phone numbers.");
+        System.out.println(SHARED_PHONE_NUMBERS);
     else
-        System.out.println("All contacts have different phone numbers.");
+        System.out.println(DIFFERENT_PHONE_NUMBERS);
 
     }
 }
