@@ -2,6 +2,8 @@ package contactBook;
 
 import contactBook.Contact;
 
+import java.util.HashSet;
+
 public class ContactBook {
     static final int DEFAULT_SIZE = 100;
 
@@ -37,8 +39,8 @@ public class ContactBook {
     //Pre: name != null && hasContact(name)
     public void deleteContact(String name) {
         int index = searchIndex(name);
-        for(int i=index; i<counter; i++)
-            contacts[i] = contacts[i+1];
+        for (int i = index; i < counter; i++)
+            contacts[i] = contacts[i + 1];
         counter--;
     }
 
@@ -76,7 +78,7 @@ public class ContactBook {
         int i = 0;
         int result = -1;
         boolean found = false;
-        while (i<counter && !found)
+        while (i < counter && !found)
             if (contacts[i].getName().equals(name))
                 found = true;
             else
@@ -86,8 +88,8 @@ public class ContactBook {
     }
 
     private void resize() {
-        Contact tmp[] = new Contact[2*contacts.length];
-        for (int i=0;i<counter; i++)
+        Contact tmp[] = new Contact[2 * contacts.length];
+        for (int i = 0; i < counter; i++)
             tmp[i] = contacts[i];
         contacts = tmp;
     }
@@ -97,12 +99,26 @@ public class ContactBook {
     }
 
     public boolean hasNext() {
-        return (currentContact >= 0 ) && (currentContact < counter);
+        return (currentContact >= 0) && (currentContact < counter);
     }
 
     //Pre: hasNext()
     public Contact next() {
         return contacts[currentContact++];
+    }
+
+    public boolean hasRepeatedPhoneNumbers() {
+        for (int i = 0; i < counter - 1; i++) {
+            int phoneNumber1 = contacts[i].getPhone();
+            for (int j = i + 1; j < counter; j++) {
+                int phoneNumber2 = contacts[j].getPhone();
+                if (phoneNumber1 == phoneNumber2) {
+                    return true; // There is a repeated phone number
+                }
+            }
+        }
+        // If we reach this point, there are no repeated phone numbers
+        return false;
     }
 
 }
